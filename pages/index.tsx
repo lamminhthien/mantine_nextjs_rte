@@ -1,4 +1,4 @@
-import RichTextEditor from '@mantine/rte';
+import RichTextEditor2 from '@mantine/rte';
 import {useState, useEffect} from 'react';
 export default function IndexPage() {
   const initialValue = '<p>Rich text editor content</p>';
@@ -15,15 +15,7 @@ export default function IndexPage() {
   if (isDocument) {
     // eslint-disable-next-line import/extensions, global-require
     const {RichTextEditor} = require('@mantine/rte');
-    return (
-      <RichTextEditor
-        id='rte'
-        value={value}
-        onChange={onChange}
-        formats={['bold', 'italic', 'underline']}
-        controls={[['italic', 'underline']]}
-      />
-    );
+    return <RichTextEditor value={value} onChange={onChange} id='rte' />;
   }
 
   // Render anything as fallback on server, e.g. loader or html content without editor
